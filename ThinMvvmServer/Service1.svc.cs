@@ -15,6 +15,11 @@ namespace Alexus.ThinMvvm.Server
     {
         public FirstClientModel GetFirstClientModel(int arg1, string arg2)
         {
+            
+
+            var cb = OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+            cb.Event(new List<ServiceEvent>(){new ServiceEvent(), new ServiceEvent()});
+
             return null;
         }
     }
