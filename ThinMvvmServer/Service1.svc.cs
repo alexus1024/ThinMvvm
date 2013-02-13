@@ -9,22 +9,38 @@ using Alexus.ThinMvvm.Contract;
 
 namespace Alexus.ThinMvvm.Server
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IService
-    {
-        public FirstClientModel GetFirstClientModel(int arg1, string arg2)
-        {
-	        OperationContext.Current.OperationCompleted += OpComplete;
-            
+	public class Service1 : IService
+	{
+		private static Int32 _idCounter = 0;
 
-            return null;
-        }
+		private Int32 GetIdHelper()
+		{
+			return _idCounter++;
+		}
 
-	    private void OpComplete(object sender, EventArgs e)
-	    {
-		   var cb =  OperationContext.Current.GetCallbackChannel<IServiceCallback>();
-		   cb.Event(new List<ServiceEvent>() { new ServiceEvent(), new ServiceEvent() });
-	    }
-    }
+		public FirstClientModel GetFirstClientModel(int arg1, string arg2)
+		{
+			//OperationContext.Current.OperationCompleted += OpComplete;
+
+
+			return new FirstClientModel() {Id = GetIdHelper(), Data = "Hi!"};
+		}
+
+		public SecondClientModel GetSecondClientModel(DateTime arg1, string arg2)
+		{
+			return new SecondClientModel() {Id = GetIdHelper(), AnotherData = "data..."};
+		}
+
+		public void CommandDoSomething()
+		{
+			var cb =  OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+			cb.Event(new List<ClientModelBase>() { new FirstClientModel(), new SecondClientModel() });
+		}
+
+		//private void OpComplete(object sender, EventArgs e)
+		//{
+		//	// var cb =  OperationContext.Current.GetCallbackChannel<IServiceCallback>();
+		//	// cb.Event(new List<ServiceEvent>() { new ServiceEvent(), new ServiceEvent() });
+		//}
+	}
 }

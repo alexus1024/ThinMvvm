@@ -4,9 +4,9 @@ using System.ServiceModel;
 namespace Alexus.ThinMvvm.Contract
 {
 
-    public interface IServiceCallback
-    {
-        [OperationContract(IsOneWay = true)]
-        void Event(List<ServiceEvent> events);
-    }
+	public interface IServiceCallback
+	{
+		[OperationContract(IsOneWay = true)]
+		void Event(List<ClientModelBase> events);
+	}
 }
