@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Alexus.ThinMvvmContract;
+using Alexus.ThinMvvm.Contract;
 
 namespace ThinMvvmClient
 {
@@ -29,9 +29,11 @@ namespace ThinMvvmClient
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var factory = new DuplexChannelFactory<IService>(typeof (CallbackImplementation), "ClientConne");
+            var factory = new DuplexChannelFactory<IService>(typeof(CallbackImplementation), "ThinMvvmService");
 
-            var channel = factory.CreateChannel();
+            var cb = new InstanceContext(new CallbackImplementation());
+           
+            var channel = factory.CreateChannel(cb);
 
             channel.GetFirstClientModel(1, "Hi");
         }

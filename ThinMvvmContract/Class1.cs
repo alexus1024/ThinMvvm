@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Alexus.ThinMvvmContract
+namespace Alexus.ThinMvvm.Contract
 {
     [ServiceContract(CallbackContract = typeof(IServiceCallback))]
     public interface IService
     {
+        [OperationContract]
         FirstClientModel GetFirstClientModel(Int32 arg1, String arg2);
     }
 
+    
     public interface IServiceCallback
     {
+        [OperationContract]
         void Event(List<ServiceEvent> events);
     }
 
