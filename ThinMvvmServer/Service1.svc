@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Alexus.ThinMvvm.Server.Service1" CodeBehind="Service1.svc.cs" %>
