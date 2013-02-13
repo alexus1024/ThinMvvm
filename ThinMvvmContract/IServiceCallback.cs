@@ -3,9 +3,10 @@ using System.ServiceModel;
 
 namespace Alexus.ThinMvvm.Contract
 {
+
     public interface IServiceCallback
     {
-        [OperationContract]
+        [OperationContract(IsOneWay = true)]
         void Event(List<ServiceEvent> events);
     }
 }

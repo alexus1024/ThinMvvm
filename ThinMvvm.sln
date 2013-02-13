@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinMvvmClient", "ThinMvvmClient\ThinMvvmClient.csproj", "{DC59B84E-F726-4793-9118-AECA02EA0098}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B4437071-02B9-44D0-AF53-087848A1F99E} = {B4437071-02B9-44D0-AF53-087848A1F99E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinMvvmContract", "ThinMvvmContract\ThinMvvmContract.csproj", "{CD9C3E4F-191B-43C2-A989-DD3B84BCD5E1}"
 EndProject
@@ -35,5 +38,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal
