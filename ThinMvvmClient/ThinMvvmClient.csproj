@@ -80,11 +80,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CallbackImplementation.cs" />
     <Compile Include="Modules\PresentationModule.cs" />
     <Compile Include="RegionNames.cs" />
     <Compile Include="TestCases\TestCase1.xaml.cs">
       <DependentUpon>TestCase1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestCases\TestCase1ViewModel.cs" />
     <Compile Include="TestCases\TestCase2.xaml.cs">
       <DependentUpon>TestCase2.xaml</DependentUpon>
     </Compile>

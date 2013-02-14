@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.ServiceModel;
 using System.Windows.Input;
+using Alexus.ThinMvvm.Contract;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 
@@ -10,7 +12,8 @@ namespace Alexus.ThinMvvm.Client.ViewModel
 	{
 		private TestCase _currentCase;
 
-		public TestCasesViewModel(TestCaseList cases)
+		public TestCasesViewModel(TestCaseList cases, DuplexChannelFactory<IService> channelFactory)
+			: base(channelFactory)
 		{
 			Cases = cases;
 		}
@@ -33,7 +36,6 @@ namespace Alexus.ThinMvvm.Client.ViewModel
 		{
 			var view = ServiceLocator.Current.GetInstance(typeof(Object), target.View);
 
-			var rManager = ServiceLocator.Current.GetInstance<IRegionManager>();
 			NavifateTo(RegionNames.CurrentTestCase, view);
 		}
 
@@ -51,7 +53,7 @@ namespace Alexus.ThinMvvm.Client.ViewModel
 		{
 			ClearRegion(regionName);
 			var regionManager = ServiceLocator.Current.GetInstance<IRegionManager>();
-			regionManager.AddToRegion(RegionNames.CurrentTestCase, view);
+			regionManager.AddToRegion(regionName, view);
 		}
 	}
 }

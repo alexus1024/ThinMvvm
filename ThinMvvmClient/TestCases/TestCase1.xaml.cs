@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Practices.Unity;
 
 namespace Alexus.ThinMvvm.Client.TestCases
 {
@@ -20,9 +21,17 @@ namespace Alexus.ThinMvvm.Client.TestCases
 	/// </summary>
 	public partial class TestCase1 : UserControl
 	{
+
 		public TestCase1()
 		{
 			InitializeComponent();
+		}
+
+		[Dependency]
+		public TestCase1ViewModel ViewModel
+		{
+			get { return (TestCase1ViewModel) DataContext; }
+			set { DataContext = value; }
 		}
 	}
 }

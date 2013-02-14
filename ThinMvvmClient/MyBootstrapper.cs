@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Windows;
 using Alexus.ThinMvvm.Client.Modules;
 using Alexus.ThinMvvm.Client.TestCases;
+using Alexus.ThinMvvm.Contract;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.Prism.UnityExtensions;
@@ -37,8 +40,12 @@ namespace Alexus.ThinMvvm.Client
 
 			Container.RegisterType<TestCaseList>(new ContainerControlledLifetimeManager());
 
+
+			var factory = new DuplexChannelFactory<IService>(typeof(CallbackImplementation), "ThinMvvmService");
+			Container.RegisterInstance(factory);
+
 			//Container.RegisterInstance(typeof(Kernel.IServiceClient), new Kernel.ServiceClient());
-			
+
 		}
 
 
