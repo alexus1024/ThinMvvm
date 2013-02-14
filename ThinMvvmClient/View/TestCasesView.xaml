@@ -18,12 +18,12 @@
 		 </Grid.ColumnDefinitions>  
 		
 		<Grid Grid.Column="0">
-			<ListBox ItemsSource="{Binding Cases}">
+			<ListBox ItemsSource="{Binding Cases}" SelectedItem="{Binding CurrentCase}">
 				
 			</ListBox>
 		</Grid>
 
-	    <ContentControl Grid.Column="1" regions:RegionManager.RegionName="{x:Static client:RegionNames.CurrentTestCase}" />
+	    <ContentControl Grid.Column="1" regions:RegionManager.RegionName="{x:Static client:RegionNames.CurrentTestCase}" Grid.ColumnSpan="2"  />
 		<Button VerticalAlignment="Bottom" Content="test" Click="ButtonBase_OnClick"/>
     </Grid>
 </UserControl>
