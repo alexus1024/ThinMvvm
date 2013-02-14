@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Alexus.ThinMvvm.Client.ViewModel;
+using Microsoft.Practices.Unity;
 
 namespace Alexus.ThinMvvm.Client.View
 {
@@ -23,6 +25,18 @@ namespace Alexus.ThinMvvm.Client.View
 		public TestCasesView()
 		{
 			InitializeComponent();
+		}
+
+		[Dependency]
+		public TestCasesViewModel ViewModel
+		{
+			get { return (TestCasesViewModel) DataContext; }
+			set { DataContext = value; }
+		}
+
+		private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+		{
+			var list = ViewModel.Cases;
 		}
 	}
 }

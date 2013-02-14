@@ -3,6 +3,7 @@ using System.ServiceModel;
 using System.Windows;
 using Alexus.ThinMvvm.Client.Modules;
 using Alexus.ThinMvvm.Contract;
+using Microsoft.Practices.ServiceLocation;
 
 namespace Alexus.ThinMvvm.Client
 {
@@ -22,7 +23,7 @@ namespace Alexus.ThinMvvm.Client
 
 		void Shell_Loaded(object sender, RoutedEventArgs e)
 		{
-			var m = new PresentationModule();
+			var m = ServiceLocator.Current.GetInstance<PresentationModule>();
 			m.Initialize();
 		}
 

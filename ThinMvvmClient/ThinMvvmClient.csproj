@@ -82,6 +82,13 @@
     </ApplicationDefinition>
     <Compile Include="Modules\PresentationModule.cs" />
     <Compile Include="RegionNames.cs" />
+    <Compile Include="TestCases\TestCase1.xaml.cs">
+      <DependentUpon>TestCase1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestCases\TestCase2.xaml.cs">
+      <DependentUpon>TestCase2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestCases\TestCasesModule.cs" />
     <Compile Include="ThinMvvmViewModelBase.cs" />
     <Compile Include="ViewModel\TestCasesViewModel.cs" />
     <Compile Include="View\TestCasesView.xaml.cs">
@@ -100,6 +107,14 @@
       <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TestCases\TestCase1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestCases\TestCase2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TestCasesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

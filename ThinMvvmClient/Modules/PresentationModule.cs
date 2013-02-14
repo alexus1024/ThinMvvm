@@ -18,7 +18,7 @@ namespace Alexus.ThinMvvm.Client.Modules
 			// создать представления
 			var view = ServiceLocator.Current.GetInstance<TestCasesView>();
 
-			view.DataContext = ServiceLocator.Current.GetInstance<TestCasesViewModel>(); 
+			//view.DataContext = ServiceLocator.Current.GetInstance<TestCasesViewModel>(); 
 			// установить их в регионы
 
 			ServiceLocator.Current.GetInstance<IRegionManager>().AddToRegion(RegionNames.Main, view);
