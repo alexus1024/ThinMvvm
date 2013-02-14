@@ -16,15 +16,4 @@ namespace Alexus.ThinMvvm.Client
 		where TClientModel : ClientModelBase
 	{
 	}
-
-
-	public class Presentationmodule: IModule
-	{
-
-
-		public void Initialize()
-		{
-			
-		}
-	}
 }

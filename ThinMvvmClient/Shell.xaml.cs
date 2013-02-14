@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
 using System.Windows;
+using Alexus.ThinMvvm.Client.Modules;
 using Alexus.ThinMvvm.Contract;
 
 namespace Alexus.ThinMvvm.Client
@@ -8,12 +9,24 @@ namespace Alexus.ThinMvvm.Client
     /// <summary>
     /// Interaction logic for Shell.xaml
     /// </summary>
+    
     public partial class Shell : Window
     {
         public Shell()
         {
             InitializeComponent();
+
+
+			Loaded += Shell_Loaded;
         }
+
+		void Shell_Loaded(object sender, RoutedEventArgs e)
+		{
+			var m = new PresentationModule();
+			m.Initialize();
+		}
+
+		
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -29,7 +42,7 @@ namespace Alexus.ThinMvvm.Client
 
     public class CallbackImplementation: IServiceCallback
     {
-        public void Event(List<ServiceEvent> events)
+        public void Event(List<ClientModelBase> events)
         {
             
         }
