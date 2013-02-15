@@ -29,16 +29,13 @@ namespace Alexus.ThinMvvm.Client
 			cbImpl.ClientModelChanged += OnModelChanged; 
 			var cb = new InstanceContext(cbImpl);
 
-			var channel = channelFactory.CreateChannel(cb);
+			var channel = _channelFactory.CreateChannel(cb);
 			_channel = channel;
 			//channel.GetFirstClientModel(1, "Hi");
 		}
 
-		void OnModelChanged(object sender, ClientModelEventArgs e)
-		{
-			// TODO
-			throw new NotImplementedException();
-		}
+		protected abstract void OnModelChanged(object sender, ClientModelEventArgs e);
+		
 
 
 		protected IService Server
@@ -50,13 +47,34 @@ namespace Alexus.ThinMvvm.Client
 	public abstract class ThinMvvmViewModelBase<TClientModel> : ThinMvvmViewModelBase
 		where TClientModel : ClientModelBase
 	{
+		private TClientModel _model;
+
 		protected ThinMvvmViewModelBase(DuplexChannelFactory<IService> channelFactory)
 			: base(channelFactory)
 		{
+			Model = LoadModel();
 		}
+
+		protected sealed override void OnModelChanged(object sender, ClientModelEventArgs e)
+		{
+			if (e.Model is TClientModel)
+			{
+				Model = LoadModel();
+			}
+		}
+
 
 		protected abstract TClientModel LoadModel();
 
-		public TClientModel Model { get; private set; }
+		public TClientModel Model
+		{
+			get { return _model; }
+			private set
+			{
+				if (Equals(value, _model)) return;
+				_model = value;
+				RaisePropertyChanged(() => Model);
+			}
+		}
 	}
 }

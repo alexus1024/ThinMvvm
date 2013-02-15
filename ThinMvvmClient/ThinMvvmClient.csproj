@@ -90,6 +90,7 @@
     <Compile Include="TestCases\TestCase2.xaml.cs">
       <DependentUpon>TestCase2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TestCases\TestCase2ViewModel.cs" />
     <Compile Include="TestCases\TestCasesModule.cs" />
     <Compile Include="ThinMvvmViewModelBase.cs" />
     <Compile Include="ViewModel\TestCasesViewModel.cs" />

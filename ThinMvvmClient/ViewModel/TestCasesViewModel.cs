@@ -4,16 +4,16 @@ using System.ServiceModel;
 using System.Windows.Input;
 using Alexus.ThinMvvm.Contract;
 using Microsoft.Practices.Prism.Regions;
+using Microsoft.Practices.Prism.ViewModel;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Alexus.ThinMvvm.Client.ViewModel
 {
-	public class TestCasesViewModel: ThinMvvmViewModelBase
+	public class TestCasesViewModel : NotificationObject
 	{
 		private TestCase _currentCase;
 
-		public TestCasesViewModel(TestCaseList cases, DuplexChannelFactory<IService> channelFactory)
-			: base(channelFactory)
+		public TestCasesViewModel(TestCaseList cases)
 		{
 			Cases = cases;
 		}
