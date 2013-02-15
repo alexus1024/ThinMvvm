@@ -7,5 +7,6 @@ namespace Alexus.ThinMvvm.Client
 		public static String Main = "RegionMain";
 		public static String CurrentTestCase = "RegionCurrentTestCase";
 
+		public static String Detail = "RegionDetail";
 	}
 }

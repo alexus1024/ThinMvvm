@@ -69,7 +69,7 @@ namespace Alexus.ThinMvvm.Client
 		public TClientModel Model
 		{
 			get { return _model; }
-			private set
+			set
 			{
 				if (Equals(value, _model)) return;
 				_model = value;

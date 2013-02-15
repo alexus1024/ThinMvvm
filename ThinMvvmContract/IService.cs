@@ -7,9 +7,9 @@ namespace Alexus.ThinMvvm.Contract
 	public interface IService
 	{
 		[OperationContract]
-		FirstClientModel GetFirstClientModel(Int32 arg1, String arg2);
+		DetailFullClientModel GetDetail(Int32 id, String arg2);
 
 		[OperationContract]
-		SecondClientModel GetSecondClientModel(DateTime arg1, String arg2);
+		MasterClientModel GetMaster(Int32 page, Int32 pageSize);
 	}
 }

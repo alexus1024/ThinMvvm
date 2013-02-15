@@ -17,20 +17,20 @@ using Microsoft.Practices.Unity;
 namespace Alexus.ThinMvvm.Client.TestCases
 {
 	/// <summary>
-	/// Interaction logic for TestCase2.xaml
+	/// Interaction logic for TestCaseMasterDetail.xaml
 	/// </summary>
-	public partial class TestCase2 : UserControl
+	public partial class TestCaseMasterDetail : UserControl
 	{
-		public TestCase2()
+		public TestCaseMasterDetail()
 		{
 			InitializeComponent();
 		}
 
 
 		[Dependency]
-		public TestCase2ViewModel ViewModel
+		public TestCaseMasterDetailViewModel ViewModel
 		{
-			get { return (TestCase2ViewModel)DataContext; }
+			get { return (TestCaseMasterDetailViewModel)DataContext; }
 			set { DataContext = value; }
 		}
 	}

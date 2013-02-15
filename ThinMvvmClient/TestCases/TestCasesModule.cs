@@ -19,12 +19,12 @@ namespace Alexus.ThinMvvm.Client.TestCases
 
 		public void Initialize()
 		{
-			_container.RegisterType(typeof (Object), typeof (TestCase1), typeof (TestCase1).FullName);
-			_container.RegisterType(typeof (Object), typeof (TestCase2), typeof (TestCase2).FullName);
+			_container.RegisterType(typeof (Object), typeof (TestCaseSimpleAccept), typeof (TestCaseSimpleAccept).FullName);
+			_container.RegisterType(typeof (Object), typeof (TestCaseMasterDetail), typeof (TestCaseMasterDetail).FullName);
 
-			_cases.Add(new TestCase() {Title = "Тестовый случай 1", View = typeof (TestCase1).FullName});
-			_cases.Add(new TestCase() { Title = "Тестовый случай 2", View = typeof(TestCase2).FullName });
-			_cases.Add(new TestCase() { Title = "Тестовый случай 3", View = typeof(TestCase2).FullName });
+			_cases.Add(new TestCase() {Title = "Тестовый случай 1", View = typeof (TestCaseSimpleAccept).FullName});
+			_cases.Add(new TestCase() { Title = "Тестовый случай 2", View = typeof(TestCaseMasterDetail).FullName });
+			//_cases.Add(new TestCase() { Title = "Тестовый случай 3", View = typeof(TestCaseMasterDetail).FullName });
 
 		}
 	}

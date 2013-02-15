@@ -83,14 +83,14 @@
     <Compile Include="CallbackImplementation.cs" />
     <Compile Include="Modules\PresentationModule.cs" />
     <Compile Include="RegionNames.cs" />
-    <Compile Include="TestCases\TestCase1.xaml.cs">
-      <DependentUpon>TestCase1.xaml</DependentUpon>
+    <Compile Include="TestCases\TestCaseSimpleAccept.xaml.cs">
+      <DependentUpon>TestCaseSimpleAccept.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestCases\TestCase1ViewModel.cs" />
-    <Compile Include="TestCases\TestCase2.xaml.cs">
-      <DependentUpon>TestCase2.xaml</DependentUpon>
+    <Compile Include="TestCases\TestCaseSimpleAcceptViewModel.cs" />
+    <Compile Include="TestCases\TestCaseMasterDetail.xaml.cs">
+      <DependentUpon>TestCaseMasterDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestCases\TestCase2ViewModel.cs" />
+    <Compile Include="TestCases\TestCaseMasterDetailViewModel.cs" />
     <Compile Include="TestCases\TestCasesModule.cs" />
     <Compile Include="ThinMvvmViewModelBase.cs" />
     <Compile Include="ViewModel\TestCasesViewModel.cs" />
@@ -110,11 +110,11 @@
       <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TestCases\TestCase1.xaml">
+    <Page Include="TestCases\TestCaseSimpleAccept.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestCases\TestCase2.xaml">
+    <Page Include="TestCases\TestCaseMasterDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

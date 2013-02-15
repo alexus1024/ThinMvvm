@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Alexus.ThinMvvm.Client.TestCases.TestCase1"
+﻿<UserControl x:Class="Alexus.ThinMvvm.Client.TestCases.TestCaseSimpleAccept"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
              xmlns:testCases="clr-namespace:Alexus.ThinMvvm.Client.TestCases"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-			 d:DataContext="{d:DesignInstance testCases:TestCase1ViewModel }"
+			 d:DataContext="{d:DesignInstance testCases:TestCaseSimpleAcceptViewModel }"
 			 >
     <StackPanel Background="LightSkyBlue">
         <TextBlock Text="{Binding Path=Model.Id}" Background="LightGray"/>
